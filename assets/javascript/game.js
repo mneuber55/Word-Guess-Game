@@ -8,6 +8,18 @@ var titleArray2 = [];
 var blanksArray = [];
 var letterGuessed = false;
 var numWins = 0;
+var movieImages = {
+    "INCEPTION": "inception.jpg",
+    "THE SHAWSHANK REDEMPTION": "shawshank.jpg",
+    "THE DARK KNIGHT": "darkknight.jpg",
+    "FORREST GUMP": "forrestgump.jpg",
+    "THE MATRIX": "matrix.jpg",
+    "STAR WARS": "starwars.jpg",
+    "SAVING PRIVATE RYAN": "savingprivateryan.jpg",
+    "THE DEPARTED": "departed.jpg",
+    "THE LION KING": "lionking.jpg",
+    "GLADIATOR": "gladiator.jpg"
+}
 
 document.getElementById("currentGuesses").innerHTML = guessesRemaining;
 console.log(titleArray);
@@ -37,17 +49,13 @@ document.onkeyup = function (event) {
     }
     // Actions to perform if correct letter guessed
     if (letterGuessed) {
-        console.log(blanksArray);
         document.getElementById("currentWord").innerHTML = " ";
-        console.log(letter);
-        console.log(titleArray2.indexOf(letter));
         for (i = 0; i < blanksArray.length; i++) {
             document.getElementById("currentWord").innerHTML += blanksArray[i].toUpperCase() + " ";
         }
         for (i=0; i< titleArray2.length; i++) {
             if (titleArray2.indexOf(letter) >= 0) {
                 titleArray2.splice(titleArray2.indexOf(letter), 1);
-                console.log(titleArray2);
             }
         }
         letterGuessed = false;
@@ -66,6 +74,6 @@ document.onkeyup = function (event) {
         numWins++;
         document.getElementById("currentGuesses").innerHTML = "YOU WIN";
         document.getElementById("winCounter").innerHTML = "Number of wins: " + numWins;
-
+        document.getElementById("movie-poster").src = "assets/images/"+movieImages[randTitle];
     }
 }
