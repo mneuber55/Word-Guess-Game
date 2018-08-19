@@ -75,5 +75,29 @@ document.onkeyup = function (event) {
         document.getElementById("currentGuesses").innerHTML = "YOU WIN";
         document.getElementById("winCounter").innerHTML = "Number of wins: " + numWins;
         document.getElementById("movie-poster").src = "assets/images/"+movieImages[randTitle];
+
+        // Create new series of blanks
+        randTitle = movieTitles[Math.floor(Math.random() * movieTitles.length)];
+        titleArray = randTitle.split("");
+        titleArray2 = [];
+        blanksArray = [];
+        letterGuessed = false;
+        guessesRemaining = 6;
+        document.getElementById("currentGuesses").innerHTML = guessesRemaining;
+        document.getElementById("currentWord").innerHTML = " ";
+        document.getElementById("guessedLetters").innerHTML = " ";
+        // Create working array, remove spaces
+        for (i=0; i<titleArray.length; i++) {
+            titleArray2.push(titleArray[i].toLowerCase());
+        }
+        for (i = 0; i < 3; i++) {
+            if (titleArray2.indexOf(" ") >= 0) {
+                titleArray2.splice(titleArray2.indexOf(" "), 1);
+            }
+        }
+        for (i = 0; i < titleArray.length; i++) {
+            blanksArray.push("_");
+            document.getElementById("currentWord").innerHTML += blanksArray[i] + " ";
+        }
     }
 }
