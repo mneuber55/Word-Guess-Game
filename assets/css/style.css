@@ -1,0 +1,43 @@
+body {
+    background:  lightgray;
+}
+
+.main-container {
+    margin-top: 30px;
+}
+
+.game-title {
+    font-family: fantasy;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+H1 {
+    font-size: 50px;
+}
+
+img {
+    max-width:100%;
+}
+
+.col-6 {
+    padding: 25px;
+}
+
+#winCounter,
+#wordTitle,
+#currentWord,
+#guessesRemainingTitle,
+#currentGuesses,
+#lettersTitle,
+#guessedLetters {
+    margin-top: 20px;
+}
+
+#currentWord,
+#currentGuesses,
+#guessedLetters {
+    height: 20px;
+    font-size: 20px;
+}
