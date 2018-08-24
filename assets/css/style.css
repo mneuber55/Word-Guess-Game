@@ -1,5 +1,5 @@
 body {
-    background:  lightgray;
+    background: slategray;
 }
 
 .main-container {
@@ -11,6 +11,7 @@ body {
     text-align: center;
     margin-top: 20px;
     font-size: 50px;
+    color: #ffffff;
 }
 
 H1 {
@@ -21,18 +22,20 @@ img {
     max-width:100%;
 }
 
-.col-6 {
+.col-7 {
     padding: 25px;
+    background: #ffffff;
 }
 
 #winCounter,
 #wordTitle,
 #currentWord,
 #guessesRemainingTitle,
-#currentGuesses,
+#current-guesses,
 #lettersTitle,
 #guessedLetters {
     margin-top: 20px;
+
 }
 
 #currentWord,
