@@ -93,22 +93,20 @@ function performAction() {
 }
     
 function gameOver() {
-    document.getElementById("currentWord").innerHTML = "GAME OVER";
-    confirm("GAME OVER!  Press OK to start a new game");
-    startGame();
+    document.getElementById("message").innerHTML = "GAME OVER";
 }
 
 function gameWon() {
         numWins++;
-        document.getElementById("guessedLetters").innerHTML = "YOU WIN";
+        document.getElementById("message").innerHTML = "YOU WIN";
         document.getElementById("winCounter").innerHTML = "Number of wins: " + numWins;
         document.getElementById("movie-poster").src = "assets/images/" + movieImages[randTitle];
-        startGame();
     }
 
 // Take key pressed, look for match, change blank to letter, remove from array2
 document.onkeyup = function (event) {
     letter = event.key;
+    document.getElementById("message").innerHTML = "";
     checkLetter();
     performAction();
     if (titleArrayLowerTrim.length == 0) {
